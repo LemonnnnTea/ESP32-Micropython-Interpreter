@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MicroPython Web IDE</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>MicroPython Web IDE</h1>
+
+    <div class="panel">
+        <h3>连接设置</h3>
+        <input type="text" id="urlInput" value="ws://192.168.4.1:8266" placeholder="WebSocket URL" style="width: 300px; padding: 8px;">
+        <button id="connectBtn">连接</button>
+        <button id="disconnectBtn" disabled>断开</button>
+        <div id="status" class="status disconnected">未连接</div>
+    </div>
+
+    <div class="panel">
+        <h3>文件管理</h3>
+        <button id="listFilesBtn" disabled>刷新文件列表</button>
+        <button id="newFileBtn" disabled>新建文件</button>
+        <button id="deleteFileBtn" disabled>删除选中文件</button>
+
+        <div class="file-list" id="fileList">
+            <div style="color: #6c757d; text-align: center;">点击刷新文件列表查看文件</div>
+        </div>
+
+        <div class="editor-area">
+            <div class="editor-header">
+                <h4 style="margin: 0;">文件编辑器</h4>
+                <span class="file-info" id="fileInfo">未选择文件</span>
+            </div>
+            <input type="text" id="filenameInput" placeholder="文件名 (如: main.py)" disabled>
+            <textarea id="fileEditor" class="editor" placeholder="文件内容..." disabled></textarea>
+            <div>
+                <button id="saveFileBtn" disabled>保存文件</button>
+                <button id="readFileBtn" disabled>读取文件</button>
+                <button id="runFileBtn" disabled>运行文件</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h3>Python终端</h3>
+        <div id="terminal"></div>
+        <div class="input-area">
+            <input type="text" id="input" placeholder="输入Python代码或命令..." disabled>
+            <button id="sendBtn" disabled>发送</button>
+            <button id="clearBtn">清屏</button>
+        </div>
+    </div>
+</div>
+
+<script src = "js/script.js"></script>
+</body>
+</html>
